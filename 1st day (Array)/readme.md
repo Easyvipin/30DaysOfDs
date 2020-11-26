@@ -1,5 +1,12 @@
 # ARRAY ---
 
+### CONCEPTS
+  #### refrence ,deep copy
+    
+  #### accessor
+  
+
+
 ### Challanges
 
 1. Reverse Array
