@@ -2,10 +2,49 @@
 
 ### CONCEPTS
   #### refrence ,deep copy
+    Whenever we copy arr2 = arr1 , the reference of arr1 is stored in arr2 . So any changes in arr2 will also reflect in arr1
+    Example:
+    ```
+    let arr1 = [0, 3, 5, 8];
+    let arr2 = arr1;
+    arr2[0] = 1;
+
+    console.log(arr1);
+    /* [1, 3, 5, 8] */
+    ```
+    So to alter this behaviour we use deep copy.
+    In Deep Copy we copy the reference of each index of array.
+    
+    ```
+     let counts = [];
+     let sameCounts = [];
+
+        for (let i = 0; i < 200; i++) {
+          counts[i] = i + 1;
+             }
+       function copy(counts, sameCounts) {
+       for (let i = 0; i < counts.length; i++) {
+       sameCounts[i] = counts[i];
+        } 
+        }
+      copy(counts, sameCounts);
+     counts[0] = 999;
+     console.log(sameCounts);
+     console.log(counts);
+    
+    ```
     
   #### accessor
-  
-
+   ##### .indexOf()
+   ##### .lastIndexOf()
+   ##### .splice()
+   ##### .toString()
+   ##### .concat()
+  #### Mutator functions
+   ##### .push()
+   ##### .pop()
+   ##### .shift()
+   ##### .unshift()
 
 ### Challanges
 
