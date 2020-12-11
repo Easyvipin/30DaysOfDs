@@ -1,0 +1,68 @@
+### Using stack data structure to convert decimal number to Binary
+
+```
+
+/* create a object stack */
+
+class Stack {
+  constructor() {
+    this.count = 0;
+    this.items = {};
+  }
+  push(element) {
+    this.count++;
+    this.items[this.count] = element;
+  }
+  pop() {
+    if (this.count > 0) {
+      let delItem = this.items[this.count];
+      delete this.items[this.count];
+      this.count--;
+      return delItem;
+    } else {
+      console.log("No element to pop");
+    }
+  }
+  peek() {
+    if (this.count > 0) {
+      return this.items[this.count];
+    } else {
+      console.log("Stack is empty add a item with push method");
+    }
+  }
+  size() {
+    return this.count;
+  }
+  isEmpty() {
+    return this.count === 0;
+  }
+  clear() {
+    this.count = 0;
+    this.items = {};
+  }
+}
+
+function convertBinary(decNo) {
+  const stack = new Stack();
+  let no = decNo;
+  let rem = 0;
+  let binaryString = "";
+
+  while (no > 0) {
+    rem = Math.floor(no % 2);
+    stack.push(rem);
+    no = Math.floor(no / 2);
+  }
+  while (!stack.isEmpty()) {
+    binaryString += stack.pop().toString();
+  }
+  return binaryString;
+}
+
+let binary = convertBinary(10);
+console.log(binary);
+
+
+
+
+```
